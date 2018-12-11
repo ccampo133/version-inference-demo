@@ -23,13 +23,13 @@ public class VersionDemoApplication {
         }
     }
 
+    // Gets the application version set in the JAR's MANIFEST.MF file.
     public static class Version {
 
         public final String version;
 
         public Version() {
-            this.version = Optional.ofNullable(this.getClass().getPackage().getImplementationVersion())
-                            .orElse("undefined");
+            this.version = Optional.ofNullable(getClass().getPackage().getImplementationVersion()).orElse("undefined");
         }
     }
 }
