@@ -18,18 +18,25 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'nebula.release'
 
+group = 'me.ccampo'
+sourceCompatibility = 1.8
+/*
+ * Note that we don't explicitly set the version in this file, but instead rely
+ * on the nebula.release plugin to infer and generate it implicitly. Normally
+ * you would do: version = <VERSION>, but that is unnecessary now. Also note
+ * that the "version" property is still defined and can be referenced in this
+ * build.gradle file (see the manifest attributes below, for example).
+ */
+
 bootJar {
     manifest {
         attributes(
                 "Implementation-Title": "Demo of Netflix's Nebula Release Plugin",
-                // Here we set the inferred version, using the "version" variable, which is dynamically set
+                // Here we set the inferred version, using the "version" property, which is dynamically set
                 "Implementation-Version": version
         )
     }
 }
-
-group = 'me.ccampo'
-sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
