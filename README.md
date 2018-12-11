@@ -30,4 +30,8 @@ by hitting the `/version` endpoint. Example:
       "version": "0.2.0-dev.0.uncommitted+0a22a51"
     }
     
-Try checking out different commits and seeing which version are inferred.
+Try checking out different commits, building and seeing which version are inferred.
+
+It's probably a good idea set the behavior to use the latest tag in the version inference, example:
+
+    ./gradlew -Prelease.useLastTag=true build
