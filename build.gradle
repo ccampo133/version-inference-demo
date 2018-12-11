@@ -18,6 +18,16 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'nebula.release'
 
+bootJar {
+    manifest {
+        attributes(
+                "Implementation-Title": "Demo of Netflix's Nebula Release Plugin",
+                // Here we set the inferred version, using the "version" variable, which is dynamically set
+                "Implementation-Version": version
+        )
+    }
+}
+
 group = 'me.ccampo'
 sourceCompatibility = 1.8
 
