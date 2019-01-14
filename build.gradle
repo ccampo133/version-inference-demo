@@ -46,3 +46,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+// Always print the inferred version
+println "Inferred version: $version"
